@@ -28,7 +28,7 @@ Hier zijn voor elk van de vier projecten veelvoorkomende fouten die beginnende p
 
 ### 1. **To-do lijst applicatie**
 
-#### Veelvoorkomende fouten:
+####  fouten:
 - **Bestandsfouten (FileNotFoundError)**: Als het tekstbestand voor de taken niet bestaat, kan dit een fout veroorzaken wanneer je probeert taken te laden.
   - **Oplossing**: Controleer of het bestand bestaat en maak een leeg bestand aan als dat niet het geval is:
     ```python
@@ -56,7 +56,7 @@ Hier zijn voor elk van de vier projecten veelvoorkomende fouten die beginnende p
 
 ### 2. **Rekenmachine**
 
-#### Veelvoorkomende fouten:
+####  fouten:
 - **Delen door nul (ZeroDivisionError)**: Wanneer de gebruiker een deling uitvoert met 0, resulteert dit in een fout.
   - **Oplossing**: Voeg een controle toe in de `divide()`-functie om dit te voorkomen:
     ```python
@@ -84,7 +84,7 @@ Hier zijn voor elk van de vier projecten veelvoorkomende fouten die beginnende p
 
 ### 3. **Temperatuurconversie**
 
-#### Veelvoorkomende fouten:
+####  fouten:
 - **Ongeldige invoer (ValueError)**: Wanneer de gebruiker een niet-numerieke waarde invoert voor de temperatuur, resulteert dit in een fout.
   - **Oplossing**: Gebruik `try-except` om foutieve invoer af te handelen:
     ```python
@@ -111,7 +111,7 @@ Hier zijn voor elk van de vier projecten veelvoorkomende fouten die beginnende p
 
 ### 4. **Hello, World! (uitgebreid)**
 
-#### Veelvoorkomende fouten:
+####  fouten:
 - **Fout bij f-strings in oudere Python-versies**: Als je Python 3.5 of lager gebruikt, krijg je een fout met f-strings.
   - **Oplossing**: Zorg ervoor dat je Python 3.6 of hoger gebruikt, of gebruik ouderwetse string formatting:
     ```python
@@ -130,7 +130,7 @@ Hier zijn voor elk van de vier projecten veelvoorkomende fouten die beginnende p
 
 ---
 
-### Algemene tips voor beginners:
+### Mijn Tips:
 1. **Leesbare foutmeldingen**: Begrijp de foutmeldingen die Python geeft en gebruik deze om je code te debuggen. Elke fout heeft een regelnummer en een korte uitleg.
    
 2. **Veel testen**: Test je programma regelmatig door verschillende soorten invoer te proberen. Test bijvoorbeeld zowel geldige als ongeldige invoer.
