@@ -22,121 +22,162 @@ A program that converts temperatures between Celsius and Fahrenheit.
 An interactive version of the classic "Hello, World!" program.
 
 
-Hier zijn voor elk van de vier projecten veelvoorkomende fouten die beginnende programmeurs maken, samen met oplossingen:
+Mijn bugfixes: 
 
 ---
 
 ### 1. **To-do lijst applicatie**
 
-####  fouten:
-- **Bestandsfouten (FileNotFoundError)**: Als het tekstbestand voor de taken niet bestaat, kan dit een fout veroorzaken wanneer je probeert taken te laden.
-  - **Oplossing**: Controleer of het bestand bestaat en maak een leeg bestand aan als dat niet het geval is:
-    ```python
-    if not os.path.exists(filename):
-        with open(filename, 'w'): pass
-    ```
+#### Basisconcepten:
+- **Functies**: De functies `add_task()`, `complete_task()`, en `save_tasks()` laten zien hoe je acties kunt herhalen en organiseren in stukken code.
+- **Bestandsbeheer**: De applicatie gebruikt bestanden om taken op te slaan en later te laden met functies als `open()` en `write()`.
+- **Lijsten**: Taken worden opgeslagen in een lijst en worden doorlopen met loops.
+- **Loops**: Een `while True`-loop wordt gebruikt om de applicatie continu te laten draaien totdat de gebruiker besluit te stoppen.
+- **Conditionele statements**: Het programma gebruikt `if-elif-else` om de keuze van de gebruiker af te handelen.
 
-- **Ongeldige invoer (ValueError)**: Wanneer een gebruiker bijvoorbeeld letters invoert in plaats van een nummer bij het voltooien van een taak, kan dit een `ValueError` veroorzaken.
-  - **Oplossing**: Gebruik foutafhandeling om dergelijke fouten op te vangen:
-    ```python
-    try:
-        task_no = int(input("Voer een geldig nummer in: ")) - 1
-    except ValueError:
-        print("Voer een getal in.")
-    ```
+#### bugfixes:
+1. **Bestandsfouten**: 
+   - Als het tekstbestand voor de taken niet bestaat, kan dit leiden tot een fout. Oplossing: zorg ervoor dat je controleert of het bestand bestaat voordat je het probeert te openen.
+   
+   **Fix**:
+   ```python
+   if os.path.exists(filename):
+       # open het bestand
+   ```
 
-- **Lege invoer**: Als een gebruiker probeert een lege taak toe te voegen, wordt deze nog steeds opgeslagen.
-  - **Oplossing**: Voeg een controle toe om ervoor te zorgen dat lege invoer niet wordt toegevoegd:
-    ```python
-    if not task.strip():
-        print("Lege taak kan niet worden toegevoegd.")
-    ```
+2. **Ongeldige invoer**:
+   - Wanneer een gebruiker bijvoorbeeld een letter invoert in plaats van een nummer bij het markeren van een taak als voltooid, kan dit een `ValueError` veroorzaken.
+
+   **Fix**:
+   ```python
+   try:
+       task_no = int(input("Voer het nummer van de taak in: ")) - 1
+   except ValueError:
+       print("Voer een geldig getal in.")
+   ```
+
+3. **Lege invoer voor taken**:
+   - Als de gebruiker probeert een lege taak toe te voegen, zou dit vermeden moeten worden.
+
+   **Fix**:
+   ```python
+   if not task.strip():
+       print("Lege taak kan niet worden toegevoegd.")
+   ```
 
 ---
 
 ### 2. **Rekenmachine**
 
-####  fouten:
-- **Delen door nul (ZeroDivisionError)**: Wanneer de gebruiker een deling uitvoert met 0, resulteert dit in een fout.
-  - **Oplossing**: Voeg een controle toe in de `divide()`-functie om dit te voorkomen:
-    ```python
-    if y == 0:
-        return "Error: Kan niet delen door 0!"
-    ```
+#### Basisconcepten:
+- **Functies**: Het gebruik van functies zoals `add()`, `subtract()`, `multiply()`, en `divide()` toont het belang van het opdelen van taken in herbruikbare stukken code.
+- **Input en output**: Het programma vraagt om invoer van de gebruiker en geeft resultaten weer met de `input()` en `print()` functies.
+- **Conditionele statements**: `if-elif-else` wordt gebruikt om te bepalen welke wiskundige operatie wordt uitgevoerd op basis van de keuze van de gebruiker.
+- **Error handling (foutafhandeling)**: Het programma gebruikt een `try-except`-blok om te controleren of de gebruiker een geldig getal invoert.
 
-- **Ongeldige invoer (ValueError)**: Wanneer de gebruiker letters invoert in plaats van getallen, kan dit leiden tot invoerfouten.
-  - **Oplossing**: Gebruik `try-except` om foutieve invoer te verwerken:
-    ```python
-    try:
-        num1 = float(input("Voer een getal in: "))
-    except ValueError:
-        print("Voer een geldig getal in.")
-    ```
+#### bugfixes:
+1. **Delen door nul**:
+   - Wanneer de gebruiker een deling uitvoert waarbij de deler nul is, leidt dit tot een `ZeroDivisionError`.
 
-- **Ongeldige keuze in het menu**: Als de gebruiker iets anders dan 1-4 invoert, doet de calculator niets of geeft een fout.
-  - **Oplossing**: Voeg een controle toe voor ongeldige menu-invoer:
-    ```python
-    if choice not in ["1", "2", "3", "4"]:
-        print("Ongeldige keuze. Probeer opnieuw.")
-    ```
+   **Fix**:
+   ```python
+   if y == 0:
+       return "Error: Kan niet delen door 0!"
+   ```
+
+2. **Ongeldige invoer (ValueError)**:
+   - Wanneer de gebruiker een letter invoert in plaats van een getal, kan dit resulteren in een fout.
+
+   **Fix**:
+   ```python
+   try:
+       num1 = float(input("Voer een getal in: "))
+   except ValueError:
+       print("Ongeldige invoer. Voer een geldig getal in.")
+   ```
+
+3. **Ongeldige keuze in het menu**:
+   - Als de gebruiker iets anders invoert dan de opties (1-4), gebeurt er niets of verschijnt er een fout.
+
+   **Fix**:
+   ```python
+   if keuze not in ["1", "2", "3", "4"]:
+       print("Ongeldige keuze.")
+   ```
 
 ---
 
 ### 3. **Temperatuurconversie**
 
-####  fouten:
-- **Ongeldige invoer (ValueError)**: Wanneer de gebruiker een niet-numerieke waarde invoert voor de temperatuur, resulteert dit in een fout.
-  - **Oplossing**: Gebruik `try-except` om foutieve invoer af te handelen:
-    ```python
-    try:
-        celsius = float(input("Voer een getal in: "))
-    except ValueError:
-        print("Ongeldige invoer. Voer een geldig getal in.")
-    ```
+#### Basisconcepten:
+- **Functies**: Er zijn twee functies die temperatuurconversies uitvoeren: `celsius_to_fahrenheit()` en `fahrenheit_to_celsius()`. Dit laat zien hoe je dezelfde soort berekeningen in verschillende contexten kunt toepassen.
+- **Input en output**: Het programma vraagt de gebruiker om een temperatuur en toont de geconverteerde waarde.
+- **Foutafhandeling**: Het programma gebruikt `try-except` om te voorkomen dat de gebruiker niet-numerieke waarden invoert.
+- **Conditionele statements**: `if-elif-else` wordt gebruikt om te controleren of de gebruiker een geldige keuze maakt tussen Celsius en Fahrenheit.
 
-- **Ongeldige keuze in het menu**: Wanneer de gebruiker een andere waarde dan 1 of 2 invoert, kan het programma foutief werken.
-  - **Oplossing**: Voeg een controle toe voor geldige keuzes:
-    ```python
-    if keuze not in ["1", "2"]:
-        print("Ongeldige keuze.")
-    ```
+#### bugfixes:
+1. **Ongeldige invoer (ValueError)**:
+   - Wanneer de gebruiker iets invoert dat geen getal is, leidt dit tot een fout.
 
-- **Geen afronding van resultaten**: De resultaten kunnen te veel decimalen hebben, wat het resultaat onoverzichtelijk maakt.
-  - **Oplossing**: Gebruik formatteertekens om de output te beperken tot bijvoorbeeld twee decimalen:
-    ```python
-    print(f"{celsius:.2f}°C is gelijk aan {fahrenheit:.2f}°F")
-    ```
+   **Fix**:
+   ```python
+   try:
+       temp = float(input("Voer de temperatuur in: "))
+   except ValueError:
+       print("Ongeldige invoer. Voer een geldig getal in.")
+   ```
+
+2. **Ongeldige keuze**:
+   - Als de gebruiker een andere optie dan 1 of 2 invoert, moet het programma dat opvangen en de gebruiker opnieuw laten kiezen.
+
+   **Fix**:
+   ```python
+   if keuze not in ["1", "2"]:
+       print("Ongeldige keuze.")
+   ```
+
+3. **Geen afronding van resultaten**:
+   - Soms worden er te veel decimalen weergegeven, wat onoverzichtelijk is.
+
+   **Fix**:
+   ```python
+   print(f"{celsius:.2f}°C is gelijk aan {fahrenheit:.2f}°F")
+   ```
 
 ---
 
 ### 4. **Hello, World! (uitgebreid)**
 
-####  fouten:
-- **Fout bij f-strings in oudere Python-versies**: Als je Python 3.5 of lager gebruikt, krijg je een fout met f-strings.
-  - **Oplossing**: Zorg ervoor dat je Python 3.6 of hoger gebruikt, of gebruik ouderwetse string formatting:
-    ```python
-    print("Hello, {}! Welcome to Python.".format(name))
-    ```
+#### Basisconcepten:
+- **Functies**: De functie `greet_user()` wordt gebruikt om een persoonlijke begroeting te tonen. Dit illustreert hoe functies parameters kunnen accepteren en verwerken.
+- **Input**: Het programma vraagt de gebruiker om een naam in te voeren en gebruikt die in een aangepaste begroeting.
+- **Output**: Het programma toont de "Hello, World!"-boodschap en een persoonlijke begroeting met de ingevoerde naam.
+- **F-strings**: Dit laat zien hoe f-strings werken om variabelen in een string te interpoleren, een veelgebruikte manier om gegevens in een string te plaatsen.
 
-- **Vergeten om een functie aan te roepen**: Beginners vergeten soms om de functie aan te roepen in de `main()`-functie, waardoor het programma niets doet.
-  - **Oplossing**: Controleer of de functie `greet_user(user_name)` correct wordt aangeroepen binnen `main()`.
+#### bugfixes:
+1. **Fout bij f-strings in oudere Python-versies**:
+   - Als je een versie van Python ouder dan 3.6 gebruikt, werken f-strings niet.
 
-- **Geen foutafhandeling voor invoer**: Wanneer de gebruiker niets invoert, kan het programma onverwacht gedrag vertonen.
-  - **Oplossing**: Voeg een eenvoudige controle toe om te zien of de invoer leeg is:
-    ```python
-    if not user_name.strip():
-        print("Geen naam ingevoerd. Probeer opnieuw.")
-    ```
+   **Fix**: Gebruik ouderwetse string formatting voor oudere versies van Python:
+   ```python
+   print("Hello, {}! Welcome to Python.".format(name))
+   ```
 
----
+2. **Vergeten om de functie aan te roepen**:
+   - Beginners vergeten soms de functie `greet_user()` in de `main()`-functie aan te roepen, waardoor de begroeting niet wordt weergegeven.
 
-### Mijn Tips:
-1. **Leesbare foutmeldingen**: Begrijp de foutmeldingen die Python geeft en gebruik deze om je code te debuggen. Elke fout heeft een regelnummer en een korte uitleg.
-   
-2. **Veel testen**: Test je programma regelmatig door verschillende soorten invoer te proberen. Test bijvoorbeeld zowel geldige als ongeldige invoer.
+   **Fix**:
+   ```python
+   greet_user(user_name)
+   ```
 
-3. **Kleine stappen**: Probeer je programma in kleine stappen te bouwen. Voeg steeds kleine stukjes functionaliteit toe en test ze grondig voordat je verder gaat.
+3. **Lege invoer voor naam**:
+   - Als de gebruiker geen naam invoert, kan het programma onverwacht gedrag vertonen.
 
-4. **Documentatie en commentaar**: Voeg commentaar toe in je code om uit te leggen wat elke functie doet. Dit helpt je om de logica van je programma te begrijpen wanneer je eraan werkt.
+   **Fix**:
+   ```python
+   if not user_name.strip():
+       print("Geen naam ingevoerd. Probeer opnieuw.")
+   ```
 
-Met deze richtlijnen en foutoplossingen kun je typische beginnersfouten voorkomen en jezelf helpen beter te programmeren.
+
