@@ -109,3 +109,106 @@ Een eenvoudige versie van "Hello, World!" waarin de gebruiker interactief wordt 
 ### Bugfixes:
 - **Vergeten om een functie aan te roepen**: Beginners vergeten soms om de functie aan te roepen, waardoor de begroeting niet verschijnt. Oplossing: Zorg ervoor dat je functie wordt aangeroepen in de `main()`-functie.
 - **Lege invoer**: Als de gebruiker niets invoert voor hun naam, kan dit onverwacht gedrag veroorzaken. Oplossing: Voeg een controle toe om te zorgen dat de invoer niet leeg is.
+
+
+
+
+
+
+
+
+
+
+
+
+### Algemene tips voor het gesprek:
+- **Wees zelfverzekerd**: Je hebt deze projecten zelf gebouwd en elk project toont verschillende belangrijke vaardigheden. Wees trots op wat je hebt bereikt.
+- **Wees eerlijk**: Als je iets niet weet of nog aan het leren bent, is dat prima! Een goede coach waardeert je openheid en leergierigheid.
+- **Blijf kalm en voorbereid**: Deze cheatsheet helpt je om eventuele vragen over je werk te beantwoorden. Neem de tijd om rustig uit te leggen wat je hebt gedaan.
+
+---
+
+### Project 1: **To-do Lijst Applicatie**
+
+- **Wat het project doet**:
+  - Dit is een eenvoudige applicatie waarmee de gebruiker taken kan toevoegen, voltooien, en verwijderen.
+  - De taken worden opgeslagen in een tekstbestand, zodat de gebruiker de lijst later kan openen.
+
+- **Waarom dit project belangrijk is**:
+  - Het toont dat je **bestandsbeheer** begrijpt en hoe je data persistent maakt (opgeslagen na afsluiten).
+  - Het laat zien dat je weet hoe je **functies** kunt gebruiken om je code georganiseerd te houden.
+  - Het is een voorbeeld van een eenvoudige maar nuttige applicatie die veel gebruikers dagelijks gebruiken.
+
+- **Veelvoorkomende fout**:
+  - Als de gebruiker een fout maakt bij het invoeren van een taaknummer, kan de applicatie crashen. Dit project laat zien dat je hebt nagedacht over **foutafhandeling**.
+
+- **Kritische vraag om voor te bereiden**:
+  - **Waarom heb je gekozen om de data in een tekstbestand op te slaan en niet bijvoorbeeld in een database?**
+    - Antwoord: Voor een eenvoudige applicatie zoals deze is een tekstbestand efficiënt en makkelijk. Een database zou overkill zijn voor deze schaal, maar ik zou in een toekomstige versie een database kunnen implementeren om de applicatie robuuster te maken.
+
+---
+
+### Project 2: **Rekenmachine**
+
+- **Wat het project doet**:
+  - Een eenvoudige calculator die basisbewerkingen zoals optellen, aftrekken, vermenigvuldigen en delen uitvoert.
+  
+- **Waarom dit project belangrijk is**:
+  - Het toont je begrip van **functies** en hoe je kleine, herbruikbare stukjes code kunt schrijven voor elke bewerking.
+  - Het laat zien dat je gebruik kunt maken van **conditionele logica** (zoals `if-else`) om beslissingen te nemen op basis van gebruikersinvoer.
+
+- **Veelvoorkomende fout**:
+  - Delen door nul zou een fout kunnen geven. Dit project laat zien dat je hebt nagedacht over het controleren van randgevallen.
+
+- **Kritische vraag om voor te bereiden**:
+  - **Hoe zorg je ervoor dat gebruikers geen ongeldige invoer geven, zoals tekst in plaats van een getal?**
+    - Antwoord: Ik heb foutafhandeling toegevoegd met `try-except`, zodat de applicatie een foutmelding geeft in plaats van te crashen wanneer de invoer ongeldig is.
+
+---
+
+### Project 3: **Temperatuurconversie**
+
+- **Wat het project doet**:
+  - Het converteert temperaturen tussen Celsius en Fahrenheit, afhankelijk van de keuze van de gebruiker.
+  
+- **Waarom dit project belangrijk is**:
+  - Het project toont je vermogen om **wiskundige berekeningen** te implementeren en uit te voeren in Python.
+  - Het laat zien dat je input van de gebruiker kunt verwerken en op basis daarvan de juiste conversie kunt uitvoeren.
+
+- **Veelvoorkomende fout**:
+  - Als de gebruiker iets anders dan een getal invoert, kan het programma crashen. Dit project illustreert hoe je **foutafhandeling** implementeert.
+
+- **Kritische vraag om voor te bereiden**:
+  - **Waarom is foutafhandeling zo belangrijk in applicaties zoals deze?**
+    - Antwoord: Foutafhandeling zorgt ervoor dat de applicatie niet crasht als gebruikers onverwachte invoer geven. Dit maakt de applicatie robuuster en gebruiksvriendelijker.
+
+---
+
+### Project 4: **Hello, World! (Uitgebreid)**
+
+- **Wat het project doet**:
+  - Dit is een interactieve versie van het klassieke "Hello, World!" programma. Het begroet de gebruiker met hun naam.
+  
+- **Waarom dit project belangrijk is**:
+  - Het introduceert het gebruik van **input/output** en toont hoe je gebruikersinvoer kunt verwerken.
+  - Het project maakt gebruik van **f-strings** in Python om variabelen in een string te integreren, wat een modern en efficiënt gebruik van string-interpolatie laat zien.
+
+- **Veelvoorkomende fout**:
+  - Als de gebruiker geen naam invoert, kan het programma onverwachte resultaten geven. Hier is een eenvoudige controle geïmplementeerd om dat te voorkomen.
+
+- **Kritische vraag om voor te bereiden**:
+  - **Waarom heb je f-strings gebruikt in plaats van een andere manier om strings te formatteren?**
+    - Antwoord: F-strings zijn in Python 3.6 en hoger een efficiëntere en makkelijkere manier om strings te formatteren. Ze zijn sneller dan traditionele methoden zoals `.format()` en maken de code leesbaarder.
+
+---
+
+### Algemene vragen om voor te bereiden:
+
+1. **Waarom heb je deze specifieke projecten gekozen?**
+   - Antwoord: Elk project vertegenwoordigt een fundamenteel concept in programmeren, zoals bestandsbeheer, foutafhandeling, conditionele logica, en gebruikersinvoer. Deze projecten laten een breed scala aan vaardigheden zien die relevant zijn voor softwareontwikkeling.
+
+2. **Wat heb je geleerd tijdens het bouwen van deze projecten?**
+   - Antwoord: Ik heb geleerd hoe belangrijk het is om gestructureerde en herbruikbare code te schrijven, hoe je foutafhandeling implementeert om de gebruikerservaring te verbeteren, en hoe je gebruikersinvoer verwerkt en daarop reageert.
+
+3. **Hoe zou je deze projecten in de toekomst verbeteren?**
+   - Antwoord: Ik zou bijvoorbeeld de to-do lijst kunnen uitbreiden met een database voor betere opslag, en de rekenmachine uitbreiden met complexere functies zoals exponenten of wortels. Verder zou ik meer aandacht kunnen besteden aan het maken van een grafische gebruikersinterface voor sommige projecten.
