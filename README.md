@@ -1,188 +1,111 @@
-# python-projects-portfolio
+## 1. **To-do Lijst Applicatie**
 
- Mijn portfolio
+### Beschrijving:
+Een eenvoudige to-do lijst applicatie waarin de gebruiker taken kan toevoegen, voltooien, en verwijderen. De taken worden opgeslagen in een tekstbestand, zodat de lijst behouden blijft na het sluiten van de applicatie.
 
+### Gebruikte technieken:
+- **Bestandsbeheer**: Taken worden opgeslagen in een tekstbestand (`todo_list.txt`), wat laat zien hoe je bestanden kunt openen, lezen, schrijven en manipuleren in Python.
+- **Functies**: Verschillende functies worden gebruikt om de code georganiseerd en herbruikbaar te maken (bijv. voor het toevoegen, voltooien en weergeven van taken).
+- **Loops**: De applicatie blijft herhalen totdat de gebruiker ervoor kiest om af te sluiten.
+- **Input/Output**: De gebruiker kan input geven (bijvoorbeeld het toevoegen van een taak), en de output wordt weergegeven in de console.
 
-# Python Projects Portfolio
+### Basisprincipes:
+- **Bestandsbeheer in Python**: In dit project wordt de `open()`-functie gebruikt om taken op te slaan en op te halen van een tekstbestand. Het begrijpen van hoe je bestanden beheert, is essentieel voor veel toepassingen in softwareontwikkeling.
+  - Voorbeeld:
+    ```python
+    with open("todo_list.txt", "w") as f:
+        f.write("Nieuwe taak")
+    ```
 
-This is a collection of simple Python projects I built.
+- **Functies en modulariteit**: Functies maken je code herbruikbaar en overzichtelijk. In dit project worden de taken zoals toevoegen, verwijderen en voltooien van taken in afzonderlijke functies georganiseerd.
 
-## Projects
-
-### 1. To-do List App
-A simple to-do list application for adding, completing, and removing tasks.
-
-### 2. Calculator
-A simple calculator that performs addition, subtraction, multiplication, and division.
-
-### 3. Temperature Converter
-A program that converts temperatures between Celsius and Fahrenheit.
-
-### 4. Hello, World! (Extended)
-An interactive version of the classic "Hello, World!" program.
-
-
-
-
-
-
-
-Mijn bugfixes: 
+### Bugfixes:
+- **Bestand niet gevonden**: Als het bestand `todo_list.txt` niet bestaat, kan de applicatie falen. Oplossing: controleer of het bestand bestaat, en maak het indien nodig aan.
+- **Foute invoer**: Wanneer de gebruiker een letter invoert in plaats van een cijfer om een taak te voltooien. Oplossing: Gebruik foutafhandeling (`try-except`) om niet-numerieke invoer af te vangen.
 
 ---
 
-### 1. **To-do lijst applicatie**
+## 2. **Rekenmachine**
 
-#### Basisconcepten:
-- **Functies**: De functies `add_task()`, `complete_task()`, en `save_tasks()` laten zien hoe je acties kunt herhalen en organiseren in stukken code.
-- **Bestandsbeheer**: De applicatie gebruikt bestanden om taken op te slaan en later te laden met functies als `open()` en `write()`.
-- **Lijsten**: Taken worden opgeslagen in een lijst en worden doorlopen met loops.
-- **Loops**: Een `while True`-loop wordt gebruikt om de applicatie continu te laten draaien totdat de gebruiker besluit te stoppen.
-- **Conditionele statements**: Het programma gebruikt `if-elif-else` om de keuze van de gebruiker af te handelen.
+### Beschrijving:
+Een eenvoudige calculator die de vier basisbewerkingen uitvoert: optellen, aftrekken, vermenigvuldigen en delen.
 
-#### bugfixes:
-1. **Bestandsfouten**: 
-   - Als het tekstbestand voor de taken niet bestaat, kan dit leiden tot een fout. Oplossing: zorg ervoor dat je controleert of het bestand bestaat voordat je het probeert te openen.
-   
-   **Fix**:
-   ```python
-   if os.path.exists(filename):
-       # open het bestand
-   ```
+### Gebruikte technieken:
+- **Functies**: Voor elke bewerking (optellen, aftrekken, vermenigvuldigen, delen) wordt een afzonderlijke functie gebruikt om de structuur van de code overzichtelijk te houden.
+- **Conditionele statements**: Er wordt gebruik gemaakt van `if-else` om de invoer van de gebruiker te interpreteren en de juiste functie op te roepen.
+- **Input/Output**: De gebruiker kan twee getallen invoeren en een bewerking kiezen.
 
-2. **Ongeldige invoer**:
-   - Wanneer een gebruiker bijvoorbeeld een letter invoert in plaats van een nummer bij het markeren van een taak als voltooid, kan dit een `ValueError` veroorzaken.
+### Basisprincipes:
+- **Functies**: In dit project wordt aangetoond hoe functies worden gebruikt om herhaling te voorkomen. Elke bewerking (zoals optellen of aftrekken) is geïsoleerd in een aparte functie, wat helpt om de logica schoon en herbruikbaar te houden.
+  - Voorbeeld:
+    ```python
+    def add(x, y):
+        return x + y
+    ```
 
-   **Fix**:
-   ```python
-   try:
-       task_no = int(input("Voer het nummer van de taak in: ")) - 1
-   except ValueError:
-       print("Voer een geldig getal in.")
-   ```
+- **Conditionele logica**: De keuze van de gebruiker wordt gebruikt om te bepalen welke bewerking wordt uitgevoerd, wat aantoont hoe je `if-else`-constructies kunt gebruiken om beslissingen te nemen in de code.
+  - Voorbeeld:
+    ```python
+    if choice == "1":
+        print(add(num1, num2))
+    ```
 
-3. **Lege invoer voor taken**:
-   - Als de gebruiker probeert een lege taak toe te voegen, zou dit vermeden moeten worden.
-
-   **Fix**:
-   ```python
-   if not task.strip():
-       print("Lege taak kan niet worden toegevoegd.")
-   ```
+### Bugfixes:
+- **Delen door nul**: Wanneer de gebruiker probeert te delen door nul, zal de applicatie een fout veroorzaken. Oplossing: Voeg een controle toe om deling door nul te voorkomen.
+- **Foute invoer**: Letters of andere niet-numerieke invoer kunnen fouten veroorzaken. Oplossing: Gebruik foutafhandeling om te zorgen dat de invoer geldig is.
 
 ---
 
-### 2. **Rekenmachine**
+## 3. **Temperatuurconversie**
 
-#### Basisconcepten:
-- **Functies**: Het gebruik van functies zoals `add()`, `subtract()`, `multiply()`, en `divide()` toont het belang van het opdelen van taken in herbruikbare stukken code.
-- **Input en output**: Het programma vraagt om invoer van de gebruiker en geeft resultaten weer met de `input()` en `print()` functies.
-- **Conditionele statements**: `if-elif-else` wordt gebruikt om te bepalen welke wiskundige operatie wordt uitgevoerd op basis van de keuze van de gebruiker.
-- **Error handling (foutafhandeling)**: Het programma gebruikt een `try-except`-blok om te controleren of de gebruiker een geldig getal invoert.
+### Beschrijving:
+Een programma dat temperaturen converteert tussen Celsius en Fahrenheit. De gebruiker kan kiezen welke conversie hij/zij wil uitvoeren.
 
-#### bugfixes:
-1. **Delen door nul**:
-   - Wanneer de gebruiker een deling uitvoert waarbij de deler nul is, leidt dit tot een `ZeroDivisionError`.
+### Gebruikte technieken:
+- **Functies**: Er worden functies gebruikt om de conversies uit te voeren (Celsius naar Fahrenheit en andersom).
+- **Input/Output**: De gebruiker voert een temperatuur in en krijgt de geconverteerde waarde terug.
+- **Conditionele statements**: Het programma controleert de invoer van de gebruiker om te bepalen welke conversie moet worden uitgevoerd.
 
-   **Fix**:
-   ```python
-   if y == 0:
-       return "Error: Kan niet delen door 0!"
-   ```
+### Basisprincipes:
+- **Mathematische bewerkingen**: Dit project introduceert basale wiskundige berekeningen in Python. Formules zoals de conversie van Celsius naar Fahrenheit worden geïmplementeerd in functies.
+  - Voorbeeld:
+    ```python
+    def celsius_to_fahrenheit(celsius):
+        return (celsius * 9/5) + 32
+    ```
 
-2. **Ongeldige invoer (ValueError)**:
-   - Wanneer de gebruiker een letter invoert in plaats van een getal, kan dit resulteren in een fout.
+- **Functies en return-waarden**: Dit project toont aan hoe functies parameters kunnen ontvangen en een waarde kunnen teruggeven, wat een fundamenteel concept in programmeren is.
 
-   **Fix**:
-   ```python
-   try:
-       num1 = float(input("Voer een getal in: "))
-   except ValueError:
-       print("Ongeldige invoer. Voer een geldig getal in.")
-   ```
-
-3. **Ongeldige keuze in het menu**:
-   - Als de gebruiker iets anders invoert dan de opties (1-4), gebeurt er niets of verschijnt er een fout.
-
-   **Fix**:
-   ```python
-   if keuze not in ["1", "2", "3", "4"]:
-       print("Ongeldige keuze.")
-   ```
+### Bugfixes:
+- **Foute invoer**: Als de gebruiker iets anders dan een getal invoert, zal het programma falen. Oplossing: Voeg foutafhandeling toe om te zorgen dat de invoer geldig is.
+- **Onjuist menu-keuze**: Als de gebruiker een keuze maakt die niet in het menu staat, kan het programma niet reageren. Oplossing: Voeg een controle toe voor geldige keuzes.
 
 ---
 
-### 3. **Temperatuurconversie**
+## 4. **Hello, World! (Uitgebreid)**
 
-#### Basisconcepten:
-- **Functies**: Er zijn twee functies die temperatuurconversies uitvoeren: `celsius_to_fahrenheit()` en `fahrenheit_to_celsius()`. Dit laat zien hoe je dezelfde soort berekeningen in verschillende contexten kunt toepassen.
-- **Input en output**: Het programma vraagt de gebruiker om een temperatuur en toont de geconverteerde waarde.
-- **Foutafhandeling**: Het programma gebruikt `try-except` om te voorkomen dat de gebruiker niet-numerieke waarden invoert.
-- **Conditionele statements**: `if-elif-else` wordt gebruikt om te controleren of de gebruiker een geldige keuze maakt tussen Celsius en Fahrenheit.
+### Beschrijving:
+Een eenvoudige versie van "Hello, World!" waarin de gebruiker interactief wordt begroet op basis van hun naam.
 
-#### bugfixes:
-1. **Ongeldige invoer (ValueError)**:
-   - Wanneer de gebruiker iets invoert dat geen getal is, leidt dit tot een fout.
+### Gebruikte technieken:
+- **Input/Output**: De gebruiker voert hun naam in, en het programma begroet hen op basis van deze invoer.
+- **Functies**: Er wordt een functie gebruikt om de begroeting aan te maken.
+- **String-interpolatie**: De invoer van de gebruiker wordt in de begroeting geïntegreerd door gebruik te maken van f-strings.
 
-   **Fix**:
-   ```python
-   try:
-       temp = float(input("Voer de temperatuur in: "))
-   except ValueError:
-       print("Ongeldige invoer. Voer een geldig getal in.")
-   ```
+### Basisprincipes:
+- **Functies**: Dit project toont een eenvoudige implementatie van functies waarin de invoer van de gebruiker wordt verwerkt en een bericht wordt teruggegeven.
+  - Voorbeeld:
+    ```python
+    def greet_user(name):
+        print(f"Hello, {name}! Welcome to Python.")
+    ```
 
-2. **Ongeldige keuze**:
-   - Als de gebruiker een andere optie dan 1 of 2 invoert, moet het programma dat opvangen en de gebruiker opnieuw laten kiezen.
+- **String-interpolatie (f-strings)**: In dit project wordt een f-string gebruikt om de naam van de gebruiker in een bericht te verwerken. Dit is een handige manier om variabelen in strings te verwerken.
+  - Voorbeeld:
+    ```python
+    print(f"Hello, {name}!")
+    ```
 
-   **Fix**:
-   ```python
-   if keuze not in ["1", "2"]:
-       print("Ongeldige keuze.")
-   ```
-
-3. **Geen afronding van resultaten**:
-   - Soms worden er te veel decimalen weergegeven, wat onoverzichtelijk is.
-
-   **Fix**:
-   ```python
-   print(f"{celsius:.2f}°C is gelijk aan {fahrenheit:.2f}°F")
-   ```
-
----
-
-### 4. **Hello, World! (uitgebreid)**
-
-#### Basisconcepten:
-- **Functies**: De functie `greet_user()` wordt gebruikt om een persoonlijke begroeting te tonen. Dit illustreert hoe functies parameters kunnen accepteren en verwerken.
-- **Input**: Het programma vraagt de gebruiker om een naam in te voeren en gebruikt die in een aangepaste begroeting.
-- **Output**: Het programma toont de "Hello, World!"-boodschap en een persoonlijke begroeting met de ingevoerde naam.
-- **F-strings**: Dit laat zien hoe f-strings werken om variabelen in een string te interpoleren, een veelgebruikte manier om gegevens in een string te plaatsen.
-
-#### bugfixes:
-1. **Fout bij f-strings in oudere Python-versies**:
-   - Als je een versie van Python ouder dan 3.6 gebruikt, werken f-strings niet.
-
-   **Fix**: Gebruik ouderwetse string formatting voor oudere versies van Python:
-   ```python
-   print("Hello, {}! Welcome to Python.".format(name))
-   ```
-
-2. **Vergeten om de functie aan te roepen**:
-   - Beginners vergeten soms de functie `greet_user()` in de `main()`-functie aan te roepen, waardoor de begroeting niet wordt weergegeven.
-
-   **Fix**:
-   ```python
-   greet_user(user_name)
-   ```
-
-3. **Lege invoer voor naam**:
-   - Als de gebruiker geen naam invoert, kan het programma onverwacht gedrag vertonen.
-
-   **Fix**:
-   ```python
-   if not user_name.strip():
-       print("Geen naam ingevoerd. Probeer opnieuw.")
-   ```
-
-
+### Bugfixes:
+- **Vergeten om een functie aan te roepen**: Beginners vergeten soms om de functie aan te roepen, waardoor de begroeting niet verschijnt. Oplossing: Zorg ervoor dat je functie wordt aangeroepen in de `main()`-functie.
+- **Lege invoer**: Als de gebruiker niets invoert voor hun naam, kan dit onverwacht gedrag veroorzaken. Oplossing: Voeg een controle toe om te zorgen dat de invoer niet leeg is.
