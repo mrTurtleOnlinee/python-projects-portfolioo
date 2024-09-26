@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\berna\\source\\repos\\temperatuur_converter.py\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AFCFF6A9-0E76-47BB-AB84-754722C26447}|temperatuur_converter.py\\temperatuur_converter.py.pyproj|C:\\Users\\berna\\source\\repos\\temperatuur_converter.py\\temperatuur_converter.py\\temperatuur_converter.py.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{AFCFF6A9-0E76-47BB-AB84-754722C26447}|temperatuur_converter.py\\temperatuur_converter.py.pyproj|solutionrelative:temperatuur_converter.py\\temperatuur_converter.py.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "temperatuur_converter.py.py",
+              "DocumentMoniker": "C:\\Users\\berna\\source\\repos\\temperatuur_converter.py\\temperatuur_converter.py\\temperatuur_converter.py.py",
+              "RelativeDocumentMoniker": "temperatuur_converter.py\\temperatuur_converter.py.py",
+              "ToolTip": "C:\\Users\\berna\\source\\repos\\temperatuur_converter.py\\temperatuur_converter.py\\temperatuur_converter.py.py",
+              "RelativeToolTip": "temperatuur_converter.py\\temperatuur_converter.py.py",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAwwA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-09-26T13:06:22.74Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

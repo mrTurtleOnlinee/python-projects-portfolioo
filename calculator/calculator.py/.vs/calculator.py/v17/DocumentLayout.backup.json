@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\berna\\source\\repos\\calculator.py\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9BF2EE7E-C385-43E3-8DFF-35435DB30E19}|calculator.py\\calculator.py.pyproj|C:\\Users\\berna\\source\\repos\\calculator.py\\calculator.py\\calculator.py.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{9BF2EE7E-C385-43E3-8DFF-35435DB30E19}|calculator.py\\calculator.py.pyproj|solutionrelative:calculator.py\\calculator.py.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "calculator.py.py",
+              "DocumentMoniker": "C:\\Users\\berna\\source\\repos\\calculator.py\\calculator.py\\calculator.py.py",
+              "RelativeDocumentMoniker": "calculator.py\\calculator.py.py",
+              "ToolTip": "C:\\Users\\berna\\source\\repos\\calculator.py\\calculator.py\\calculator.py.py",
+              "RelativeToolTip": "calculator.py\\calculator.py.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-09-26T13:04:30.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
