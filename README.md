@@ -215,10 +215,6 @@ Een eenvoudige versie van "Hello, World!" waarin de gebruiker interactief wordt 
 
 ---
 
-Om de bestaande `README` van je GitHub-project vloeiend aan te vullen met de beschrijving van het Bingo-project, kun je de volgende tekst toevoegen aan het eind van je huidige document. De stijl en structuur is afgestemd op wat al aanwezig is in je projectbeschrijving, waarbij we de Bingo-applicatie netjes integreren.
-
----
-
 ## Project 5: **Bingo Spel Applicatie (GUI)**
 
 ### Beschrijving:
