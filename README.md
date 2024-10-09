@@ -212,3 +212,39 @@ Een eenvoudige versie van "Hello, World!" waarin de gebruiker interactief wordt 
 
 3. **Hoe zou je deze projecten in de toekomst verbeteren?**
    - Antwoord: Ik zou bijvoorbeeld de to-do lijst kunnen uitbreiden met een database voor betere opslag, en de rekenmachine uitbreiden met complexere functies zoals exponenten of wortels. Verder zou ik meer aandacht kunnen besteden aan het maken van een grafische gebruikersinterface voor sommige projecten.
+
+---
+
+## Project 5: **Bingo Spel Applicatie (GUI)**
+
+### Beschrijving:
+Het Bingo Spel is een interactieve GUI-applicatie waarbij de gebruiker bingo-kaarten kan genereren en spelen tegen de computer. Het spel is ontworpen om een klassieke Bingo-ervaring te bieden, waarbij willekeurige nummers worden getrokken en zowel de speler als de computer proberen zo snel mogelijk een volledige rij, kolom of diagonaal te markeren. De applicatie maakt gebruik van de `Tkinter`-bibliotheek voor een visueel aantrekkelijke interface.
+
+### Gebruikte technieken:
+- **Grafische Gebruikersinterface (GUI)**: De applicatie is gebouwd met `Tkinter` en maakt gebruik van verschillende GUI-elementen zoals knoppen, labels en frames om een overzichtelijke en interactieve ervaring te bieden.
+- **Evenementgestuurde programmering**: Door middel van `event handlers` reageert de applicatie op gebruikersacties, zoals het klikken van knoppen voor het trekken van nummers.
+- **Data structureren**: De Bingo-kaarten worden opgeslagen in geneste lijsten en dictionaries, wat een efficiënte manier biedt om nummers te controleren en gemarkeerde vakjes bij te houden.
+- **Random getallen**: Willekeurige getallen worden gegenereerd met behulp van de `random`-module om Bingo-kaarten te vullen en nummers te trekken, wat zorgt voor een unieke speelervaring bij elke sessie.
+
+### Basisprincipes:
+- **Evenementgestuurde programmering**: In een GUI-applicatie is het belangrijk dat de logica op de juiste manier reageert op gebruikersacties. Door `event handlers` te koppelen aan knoppen en andere GUI-elementen, wordt de applicatie dynamischer en gebruikersvriendelijker.
+- **Complexe datastructuren**: Lijsten en dictionaries worden gebruikt om de Bingo-kaarten te beheren, waardoor het gemakkelijk is om rijen, kolommen en diagonalen te controleren op een volledige Bingo.
+- **Synchronisatie tussen GUI en logica**: De GUI moet te allen tijde de actuele status van het spel weergeven. Met `root.update()` wordt de interface gesynchroniseerd met de logica, zodat de gebruiker direct feedback krijgt bij elke actie.
+
+### Bugfixes:
+- **Dubbele nummers op kaarten**: Bij het genereren van Bingo-kaarten kunnen er soms dubbele nummers ontstaan. Oplossing: Een set wordt gebruikt om ervoor te zorgen dat elk nummer uniek is in een kolom.
+- **GUI loopt vast**: Bij het trekken van nummers kan de GUI vastlopen als de update-logica inefficiënt is. Oplossing: Gebruik `root.update()` en optimaliseer de logica om de verwerkingsbelasting te minimaliseren.
+- **Verkeerde invoer in de GUI**: Als de gebruiker een ongeldige actie probeert uit te voeren, kan dit leiden tot een vastloper of onverwacht gedrag. Oplossing: Voeg foutafhandeling toe in de event handlers en geef meldingen in de GUI.
+
+### Kritische vragen om voor te bereiden:
+1. **Waarom heb je gekozen voor `Tkinter` in plaats van een andere GUI-bibliotheek zoals `PyQt`?**  
+   `Tkinter` is een ingebouwde bibliotheek in Python en biedt een eenvoudig instappunt voor het maken van GUI-applicaties. Voor een project van deze schaal biedt `Tkinter` alle benodigde functionaliteit zonder extra dependencies.
+2. **Hoe controleer je of een speler of de computer Bingo heeft?**  
+   Elke rij, kolom en diagonaal op de Bingo-kaart wordt gecontroleerd op gemarkeerde nummers. Als een van deze patronen volledig gemarkeerd is, heeft de speler of de computer Bingo.
+3. **Hoe zorg je ervoor dat de GUI altijd synchroon is met de spelstatus?**  
+   De GUI wordt continu geüpdatet met behulp van de `config()`-methode van `Tkinter`, waarmee labels en andere interface-elementen worden aangepast op basis van de actuele status van het spel.
+
+### Verbeteringen voor de toekomst:
+- **Meerdere winpatronen**: Naast horizontale, verticale en diagonale lijnen kunnen extra winpatronen zoals hoeken of een vol blok worden toegevoegd.
+- **Multiplayer-mogelijkheid**: De applicatie zou kunnen worden uitgebreid met een optie voor meerdere spelers, waarbij elke speler een eigen kaart heeft.
+- **Online-functionaliteit**: De huidige versie is lokaal. Een toekomstige versie zou kunnen worden uitgebreid met netwerkfunctionaliteit zodat spelers online tegen elkaar kunnen spelen.
